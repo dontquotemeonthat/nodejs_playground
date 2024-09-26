@@ -20,4 +20,4 @@ jobs:
       - run: cp package.json dist/
       - run: npm publish dist/ --provenance --access public
         env:
-          GITHUB_TOKEN: ${{ secrets.API_KEY_PUBLISH }}
+          NODE_AUTH_TOKEN: ${{ secrets.API_KEY_PUBLISH }}
