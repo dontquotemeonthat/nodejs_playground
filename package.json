@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dontquotemeonthat/nodejs_playground.git"
+    "url": "git+https://github.com/dontquotemeonthat/nodejs_playground.git"
   },
   "keywords": [],
   "author": "",
