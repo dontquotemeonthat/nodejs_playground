@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "dev": "nodemon src/index.ts",
-    "build": "tsc",
-    "prepublish": "cp ../package.json ."
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
