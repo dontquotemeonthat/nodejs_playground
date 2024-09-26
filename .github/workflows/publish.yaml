@@ -8,17 +8,17 @@ jobs:
     environment: vars
     permissions:
       contents: read
-      id-token: write
+      packages: write
     steps:
       - uses: actions/checkout@v4
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v4
         with:
           node-version: "16.x"
-          # registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://npm.pkg.github.com"
       - run: npm ci
       - run: npm run build
       - run: cp package.json dist/
-      - run: npm publish dist/ --provenance --access public
+      - run: npm publish dist/ --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.API_PUBLISH_KEY }}
