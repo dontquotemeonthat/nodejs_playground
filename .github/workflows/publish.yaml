@@ -1,0 +1,23 @@
+name: Publish Package to github npm
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "16.x"
+          # registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm build
+      - run: cp package.json dist/
+      - run: npm publish dist/ --provenance --access public
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_KEY_PUBLISH }}

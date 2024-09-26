@@ -1,0 +1,9 @@
+node_modules
+.git
+.github
+src/
+coverage/
+*.tsbuildinfo
+tsconfig.json
+jest.config.js
+nodemon.json

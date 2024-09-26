@@ -1,16 +1,17 @@
 {
   "name": "nodejs_playground",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest",
     "dev": "nodemon src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "prepublish": "cp ../package.json ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dontquotemeonthat/nodejs_playground.git"
+    "url": "https://github.com/dontquotemeonthat/nodejs_playground.git"
   },
   "keywords": [],
   "author": "",
@@ -26,5 +27,8 @@
     "ts-jest": "29.2.5",
     "ts-node": "10.9.2",
     "typescript": "5.6.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
