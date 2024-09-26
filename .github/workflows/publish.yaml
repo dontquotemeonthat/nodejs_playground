@@ -5,6 +5,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: vars
     permissions:
       contents: read
       id-token: write
@@ -20,4 +21,4 @@ jobs:
       - run: cp package.json dist/
       - run: npm publish dist/ --provenance --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.API_KEY_PUBLISH }}
+          NODE_AUTH_TOKEN: ${{ secrets.API_PUBLISH_KEY }}
